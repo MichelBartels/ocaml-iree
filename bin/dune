@@ -1,0 +1,4 @@
+(executable
+ (public_name ocaml_iree)
+ (name main)
+ (libraries ocaml_iree))
