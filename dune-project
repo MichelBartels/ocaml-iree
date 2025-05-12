@@ -2,7 +2,7 @@
 
 (using ctypes 0.3)
 
-(name ocaml_iree)
+(name iree_bindings)
 
 (generate_opam_files true)
 
@@ -18,7 +18,7 @@
 (documentation https://url/to/documentation)
 
 (package
- (name ocaml_iree)
+ (name iree_bindings)
  (synopsis "A short synopsis")
  (description "A longer description")
  (depends ocaml)
