@@ -1,4 +1,4 @@
 (executable
- (public_name ocaml_iree)
+ (public_name iree_bindings)
  (name main)
- (libraries ocaml_iree))
+ (libraries iree_bindings))

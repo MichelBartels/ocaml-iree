@@ -3,7 +3,7 @@ open C.Type
 open Ctypes
 open C_utils
 
-type kind = Local_task | Cuda
+type kind = Cpu | Cuda | Vulkan
 
 type t =
   { device: device structure Ctypes_static.ptr
@@ -30,9 +30,8 @@ let call session name =
   create_out_param assert_no_error call
   @@ call_initialize_by_name session
   @@ make_string_view name
-  
-let create_out_param c_type = create_out_param assert_no_error c_type
 
+let create_out_param c_type = create_out_param assert_no_error c_type
 
 let instance options =
   protect instance_release
@@ -52,16 +51,20 @@ let session instance options device =
   @@ instance_host_allocator instance
 
 let device_str = function
-  | Local_task ->
-      "local-task"
+  | Cpu ->
+      "llvm-cpu"
   | Cuda ->
       "cuda"
+  | Vulkan ->
+      "vulkan"
 
 let compile_device_str = function
-  | Local_task ->
+  | Cpu ->
       "vmvx"
   | Cuda ->
       "cuda"
+  | Vulkan ->
+      "vulkan"
 
 let make kind =
   let options = instance_options () in

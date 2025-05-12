@@ -1,7 +1,7 @@
 (library
- (name ocaml_iree)
+ (name iree_bindings)
  (libraries ctypes device_api)
-(ctypes
+ (ctypes
   (external_library_name iree)
   (build_flags_resolver
    (vendored
@@ -33,4 +33,4 @@
    (instance Functions)
    (functor Function_description))
   (generated_types Types_generated)
-  (generated_entry_point C))) 
+  (generated_entry_point C)))
