@@ -1,4 +1,6 @@
 (executable
  (public_name iree_bindings)
  (name main)
- (libraries iree_bindings))
+ (libraries iree_bindings)
+ (link_flags
+  (:standard -cclib "-Wl,-rpath=$ORIGIN/../../../libs/")))
