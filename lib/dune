@@ -10,11 +10,8 @@
     (c_library_flags
      :standard
      -L
-     ../../libs/
-     -l
-     IREECompiler
-     -L
-     ../../libs/
+     %{env:IREE_LIBS=../../libs/}
+     -lIREECompiler
      -liree_runtime_unified
      -lflatcc_parsing
      -lcpuinfo
