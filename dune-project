@@ -7,22 +7,13 @@
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github MichelBartels/ocaml-iree))
 
-(authors "Author Name <author@example.com>")
+(authors "Michel Bartels")
 
-(maintainers "Maintainer Name <maintainer@example.com>")
-
-(license LICENSE)
-
-(documentation https://url/to/documentation)
+(maintainers "Michel Bartels")
 
 (package
  (name iree_bindings)
- (synopsis "A short synopsis")
- (description "A longer description")
- (depends ocaml)
- (tags
-  ("add topics" "to describe" your project)))
-
-; See the complete stanza docs at https://dune.readthedocs.io/en/stable/reference/dune-project/index.html
+ (depends ocaml ctypes device_api)
+ )

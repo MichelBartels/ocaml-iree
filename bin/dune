@@ -3,4 +3,4 @@
  (name main)
  (libraries iree_bindings)
  (link_flags
-  (:standard -cclib "-Wl,-rpath=$ORIGIN/../../../libs/")))
+  (:standard -cclib "-Wl,-rpath=%{env:IREE_LIBS=../../../../lib/}")))
